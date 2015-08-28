@@ -1,13 +1,29 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OriginalDesign extends PApplet {
+
 int hatY =0;
 
-void setup()
+public void setup()
 {
 size(500,300);
 background(215,151,151);
 frameRate(25);
 }
 
-void draw()
+public void draw()
 {
 	background(215,151,151);
 
@@ -28,7 +44,7 @@ void draw()
  	}
 }
 
-void perry()
+public void perry()
 {
 //tail
 fill(255,164,118);
@@ -130,7 +146,7 @@ ellipse(143,120,2,2);
 ellipse(187,122,2,2);
 }
 
-void hat()
+public void hat()
 {
  	if(hatY < 100)
  	{
@@ -155,4 +171,13 @@ void hat()
 	fill(0);
 	quad(145,hatY-7,142,hatY,190,hatY+7,210,hatY);
 
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OriginalDesign" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
